@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import os
 ITEM_TYPE = "PSScene4Band"
 
-PRODUCTS = ['analytic', 'analytic_xml', 'basic_udm', 'basic_udm2']
+PRODUCTS = ['analytic_xml', 'basic_udm', 'basic_udm2', 'analytic']
 
-DOWNLOAD_LOCATION = r'C:\Users\jalvarez\Documents\image_download_tools\downloads_test'
+DOWNLOAD_LOCATION = os.path.join(os.path.expanduser('~'), 
+                             r'Documents\image_download_tools\downloads_test')

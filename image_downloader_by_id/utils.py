@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-import time
+
 from planet import api
 from config import PRODUCTS, ITEM_TYPE, DOWNLOAD_LOCATION
 client = api.ClientV1()
 
 def download_by_id(item_id):
     # activate assets
+    print("Downloading product id {}".format(item_id))
     assets = client.get_assets_by_id(ITEM_TYPE, item_id).get()
     
     for product in PRODUCTS:
@@ -26,6 +27,7 @@ def download_by_id(item_id):
             print("Trying again...")
         
     for product in PRODUCTS:
+        print(product)
         cd = client.download(assets[product], callback=api.write_to_file(DOWNLOAD_LOCATION))
         file = cd.get_body().name
         print("{}: {}".format(product, file))
