@@ -127,4 +127,4 @@ dmypy.json
 .idea
 .vscode
 .env 
-ids_list.txt
+*.txt

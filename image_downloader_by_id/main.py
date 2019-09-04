@@ -3,11 +3,11 @@ import sys
 import time
 from utils import download_by_id
 
-product_id = sys.argv[1]
-# product_id = "20170102_143401_0e14" # in proccess order
+# product_id = sys.argv[1]
+product_id = "20170102_143401_0e14" # in proccess order
 # product_id = "20190821_145814_0f3f"  # ok order
 
-if __name__ == "__main__":
+if __name__ == "__main__" and __package__ is None:
     start_time = time.time()
     try:
         if (product_id) is not None:
